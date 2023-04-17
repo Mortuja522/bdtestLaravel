@@ -19,3 +19,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::resource('products', ProductController::class);
+
+Route::post('create', [ProductController::class, 'create']);
+Route::post('edit', [ProductController::class, 'update']);
+Route::get('/delete/{id}', [ProductController::class, 'delete']);
+
+Route::get('/searchuser', [ProductController::class, 'searchuser']);
